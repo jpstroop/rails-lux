@@ -15,4 +15,18 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+import Vue from "vue/dist/vue.esm"
+import system from "lux-design-system"
+import "lux-design-system/dist/system/system.css"
+
+Vue.use(system)
+
+// create the LUX app and mount it to wrappers with class="lux"
+document.addEventListener("DOMContentLoaded", () => {
+  var elements = document.getElementsByClassName("lux")
+  for (var i = 0; i < elements.length; i++) {
+    new Vue({
+      el: elements[i]
+    })
+  }
+})
