@@ -4,14 +4,26 @@
     <title>AwayTime</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
+
     <div class="lux">
-    <%= yield %>
+      <library-header app-name="Your Ad Here" app-url="https://tbd.princeton.edu">
+        <menu-bar type="links" :menu-items="[
+            {name: 'Help', component: 'Help', href: '/help/'},
+            {name: 'Feedback', component: 'Feedback', href: '/feedback/'},
+            {name: 'Your Account', component: 'Account', href: '/account/'}
+          ]"/>
+      </library-header>
     </div>
+    <%= yield %>
+    <div class="lux">
+      <library-footer></library-footer>
+    </div>  
   </body>
 </html>

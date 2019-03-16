@@ -14,3 +14,8 @@
  *= require_self
  */
 @import "../../../node_modules/lux-design-system/dist/system/system.utils.scss";
+
+body {
+  padding: 0;
+  margin: 0;
+}
